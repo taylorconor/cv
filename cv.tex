@@ -1,0 +1,129 @@
+\documentclass[overlapped,12pt]{res}
+
+\usepackage[
+  top=6.5em,
+  bottom=3em,
+  left=5.5em,
+  right=8.5em,
+]{geometry}
+
+\begin{document}
+
+%-------------------------------------------------------------------------------
+%	RES.CLS CUSTOMISATIONS
+%-------------------------------------------------------------------------------
+% remove horizontal lines
+\renewcommand{\fullline}{}
+
+% add a 0.1em space between position title section and body section
+\makeatletter
+\renewenvironment{position}
+  {
+   \begingroup
+     \par
+       \the\tabular@head
+     \penalty -\@secpenalty
+     \penalty 10000
+     \ignorespaces
+     \\[-0.9em]
+  }{
+       \the\tabular@tail
+     \penalty \@secpenalty
+    \endgroup
+}
+\makeatother
+
+% used for linebreaks within sections
+\newcommand{\tinylinebreak}{\\\\[-0.9em]}
+
+%-------------------------------------------------------------------------------
+%	NAME AND ADDRESS SECTION
+%-------------------------------------------------------------------------------
+\name{{\Huge Conor Taylor}}
+
+\address{
+  Folkskolegatan 22C\\
+  11735 Stockholm\\
+  Sweden}
+\address{
+  \hfill conor@taylor.sh\\
+  \hfill (+46) 73 0924109\\
+  \hfill taylorconor.com\\
+  \hfill github.com/taylorconor}
+
+\begin{resume}
+
+%-------------------------------------------------------------------------------
+%	EXPERIENCE SECTION
+%-------------------------------------------------------------------------------
+\begin{format}
+\employer{l}\title{r}\\
+\dates{l}\location{r}\\
+\body\\
+\end{format}
+
+\section{EXPERIENCE}
+\employer{\textbf{Spotify}}
+\location{Stockholm, Sweden}
+\dates{May 2016 - present}
+\title{Senior Software Engineer}
+\begin{position}
+Java and C++ engineer, working on highly scalable Java backend services with
+over 150M active users, along with C++ client development. I work on
+architecting, implementing and maintaining lots of critical Spotify features,
+including the backend and client for Spotify Connect, the backend for the Web
+Player, Spotify for Google Home, Spotify on Sonos, and the Spotify desktop
+clients for macOS, Windows and Linux.
+\tinylinebreak
+Promoted to Senior Software Engineer in June 2018.
+\end{position}
+
+\employer{\textbf{Bloomberg}}
+\location{London, U.K.}
+\dates{May 2015 - August 2015}
+\title{Software Engineer Intern}
+\begin{position}
+Intern backend C++ developer in the Electronic Trade Order Management Systems
+team. I worked on a research project focused on reducing latency involved in
+high-frequency trade operations for all Bloomberg Terminal traders.
+\end{position}
+
+\employer{\textbf{Hunite}}
+\location{Amsterdam, Netherlands}
+\dates{May 2014 - February 2015}
+\title{Software Engineer}
+\begin{position}
+Airline timetable scheduling software. I worked on the iOS and Android clients,
+the site backend and database, and the API used to interface with the rest of
+the Hunite ecosystem. I also wrote web scrapers and parsers for data mining
+purposes, to extract and interpret complex roster sheets.
+\end{position}
+
+%-------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%-------------------------------------------------------------------------------
+\section{EDUCATION}
+\textbf{Trinity College Dublin}\hfill
+Dublin, Ireland\\
+{\sl BA (Mod)}, Computer Science, May 2016\hfill 
+First Class Honours
+
+%-------------------------------------------------------------------------------
+%	SKILLS SECTION
+%-------------------------------------------------------------------------------
+\section{SKILLS}
+\textbf{Languages}: C++, Java, C, Objective C, Python, PHP.\\
+\textbf{Applications}: Git, Docker, GCP.\\
+\textbf{Operating Systems}: Linux, macOS, Windows, iOS.
+
+%-------------------------------------------------------------------------------
+%	OTHER PROJECTS SECTION
+%-------------------------------------------------------------------------------
+\section{OTHER PROJECTS}
+Speaker at CoDe-conf Copenhagen 2018 (upcoming). code-conf.com/2018/cph.\\
+p2psc C++ library for P2P sockets using TCP hole punching.\\
+Adaptive load balancing framework for testing load balancing algorithms in
+HAProxy.
+%-------------------------------------------------------------------------------
+\end{resume}
+\end{document}
